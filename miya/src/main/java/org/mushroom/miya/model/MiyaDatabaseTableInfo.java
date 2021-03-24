@@ -8,26 +8,28 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- * 标准化后的病历数据
+ * 病历数据库表信息
  */
 
 @Data
 @Entity
-public class MiyaStandardMedicalRecord {
+public class MiyaDatabaseTableInfo {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    private String databaseName;
 
-    private String idNumber;
+    private String tableName;
 
-    private String birthday;
+    private String user;
 
-    private String mobile;
+    private String password;
 
-    private Long tableId;
+    private String system;
 
-    private Long dataId;
+    private String url;
+
+    private String map;
 }
