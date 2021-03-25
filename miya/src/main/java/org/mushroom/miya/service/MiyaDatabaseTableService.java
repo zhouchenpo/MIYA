@@ -12,4 +12,5 @@ public interface MiyaDatabaseTableService {
     MiyaDatabaseTableInfo save(MiyaDatabaseTableInfo info);
     List<MiyaDatabaseTableInfo> getAll();
     void standardiseAllRecordInDB(Long databaseId) throws SQLException;
+    void deleteById(Long id);
 }

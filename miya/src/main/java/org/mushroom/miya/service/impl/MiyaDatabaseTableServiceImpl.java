@@ -63,6 +63,11 @@ public class MiyaDatabaseTableServiceImpl implements MiyaDatabaseTableService {
         }
     }
 
+    @Override
+    public void deleteById(Long id) {
+        databaseRepository.deleteById(id);
+    }
+
     private MiyaStandardMedicalRecord convertMedicalRecordWithRs(ResultSet rs, RecordMapEntity map) throws SQLException {
         MiyaStandardMedicalRecord record = new MiyaStandardMedicalRecord();
         record.setName(rs.getString(map.getName()));

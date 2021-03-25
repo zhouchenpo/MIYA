@@ -31,6 +31,12 @@ public class MiyaDatabaseInfoController {
         return new ActionResult<>(miyaDatabaseTableService.save(info));
     }
 
+    @DeleteMapping("/deleteById")
+    ActionResult<Object> delete(@RequestParam Long id) {
+        miyaDatabaseTableService.deleteById(id);
+        return new ActionResult<>("delete succeeded");
+    }
+
     @PostMapping("/standardiseAllInDatabase")
     ActionResult<Object> standardiseAllInDatabaseById(@RequestParam Long id) {
         try{
