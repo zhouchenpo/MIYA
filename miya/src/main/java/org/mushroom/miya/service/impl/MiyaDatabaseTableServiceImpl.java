@@ -39,7 +39,8 @@ public class MiyaDatabaseTableServiceImpl implements MiyaDatabaseTableService {
         MiyaDatabaseTableInfo info = databaseRepository.getById(databaseId);
         RecordMapEntity map = JSON.parseObject(info.getMap(), RecordMapEntity.class);
 
-        try (Connection conn = DriverManager.getConnection(info.getUrl(), info.getUser(), info.getPassword());
+        try (Connection conn = DriverManager.getConnection(info.getUrl(),
+                info.getUser(), info.getPassword());
              Statement stmt = conn.createStatement()) {
             log.info("开始查询病历表中信息");
             String sql;
